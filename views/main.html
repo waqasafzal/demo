@@ -1,0 +1,45 @@
+<!DOCTYPE HTML>
+<html lang="en-us">
+	<head>
+		<meta http-equiv="Content-type" content="text/html; charset=utf-8">
+		<!---CDN Links-->
+		<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+		<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+		<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+
+		<title>{{title}}</title>
+	</head>
+	<body>
+			<h1>{{body}}</h1>
+
+
+			
+	
+	<form class="navbar-form navbar-left" role="search" action="/main" method="post">
+	  <div class="form-group">
+	    <input type="text" name="username" class="form-control" placeholder="name">
+	    <input type="text" name="username" class="form-control" placeholder="password">
+	  </div>
+	  <button type="submit" class="btn btn-default">Submit</button>
+	</form>
+	
+
+	<form class="navbar-form navbar-left" role="search" action="/main?wiki=123" method="get">
+		<button type="submit">View all</button>
+	</form>
+
+
+	<button class="btn btn-success wiki_btn">Install</button>
+
+	</body>
+</html>
+
+
+<script type="text/javascript">
+	$('.wiki_btn').click(function () {
+        $.post('/main', {data: 'blah'}, function (data) {
+        console.log(data);
+      });
+    });
+
+</script>
